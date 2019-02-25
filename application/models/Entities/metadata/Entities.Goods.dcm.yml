@@ -1,0 +1,19 @@
+Entities\Goods:
+  type: entity
+  table: coa_catalog
+  id:
+      id:
+        type: integer
+        column: id
+        generator:
+          strategy: AUTO
+  fields:
+      itemCode:
+        type: string
+        column: item_code
+      description:
+        type: string
+        column: description
+      pricetag:
+        type: integer
+        column: pricetag

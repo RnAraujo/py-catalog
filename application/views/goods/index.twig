@@ -1,0 +1,112 @@
+{% extends "templates/app.twig" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN SAMPLE TABLE PORTLET-->
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-social-dribbble font-green"></i>
+                        <span class="caption-subject font-green bold uppercase">Simple Table</span>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                            <i class="icon-cloud-upload"></i>
+                        </a>
+                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                            <i class="icon-doc"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th> # </th>
+                                <th style="width: 200px"> First Name </th>
+                                <th> Last Name </th>
+                                <th> Username </th>
+                                <th> Status </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for item in goods %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ item.id }}</td>
+                                    <td>{{ item.description }}</td>
+                                    <td>
+                                        <span class="label label-sm label-danger"> Blocked </span>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div>
+                        <ul class="pagination">
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;"> 1 </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;"> 2 </a>
+                            </li>
+                            <li class="active">
+                                <a href="javascript:;"> 3 </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;"> 4 </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;"> 5 </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;"> 6 </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- END SAMPLE TABLE PORTLET-->
+        </div>
+
+
+    </div>
+    <div class="row widget-bg-color-white no-space margin-bottom-20">
+        <h1>wellcome</h1>
+        <div class="clearfix">
+            <h4 class="block">Metronic Custom Buttons</h4>
+            <p>
+                <button type="button" class="btn default">Default</button>
+                <button type="button" class="btn red">Red</button>
+                <button type="button" class="btn blue">Blue</button>
+                <button type="button" class="btn green">Green</button>
+                <button type="button" class="btn yellow">Yellow</button>
+                <button type="button" class="btn purple">Purple</button>
+                <button type="button" class="btn dark">Dark</button>
+            </p>
+            <p>
+                <button type="button" class="btn dark">Dark</button>
+                <button type="button" class="btn red-mint">Red</button>
+                <button type="button" class="btn blue-hoki">Blue</button>
+                <button type="button" class="btn green-haze">Green</button>
+                <button type="button" class="btn yellow-mint">Yellow</button>
+                <button type="button" class="btn purple-sharp">Purple</button>
+                <button type="button" class="btn grey-mint">Grey</button>
+            </p>
+        </div>
+    </div>
+{% endblock %}

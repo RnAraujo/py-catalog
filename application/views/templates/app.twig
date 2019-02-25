@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>Administración Catalogo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Administración de Catalogo - Logistica" name="description">
+    <meta content="Rene Araujo" name="author">
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+    <link href="{{ base_url('assets/global/plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ base_url('assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ base_url('assets/global/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ base_url('assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css') }}" rel="stylesheet" type="text/css">
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="{{ base_url('assets/global/css/themes/darkblue.min.css') }}" rel="stylesheet" type="text/css" id="style_color" />
+
+
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="{{ base_url('assets/global/css/components-md.min.css') }}" rel="stylesheet" id="style_components" type="text/css">
+    <link href="{{ base_url('assets/global/css/plugins-md.min.css') }}" rel="stylesheet" type="text/css">
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="{{ base_url('assets/layouts/css/layout.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ base_url('assets/layouts/css/custom.min.css') }}" rel="stylesheet" type="text/css">
+    <!-- END THEME LAYOUT STYLES -->
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+<!-- END HEAD -->
+
+<body class="page-container-bg-solid">
+<!-- BEGIN HEADER -->
+<div class="page-header navbar-fixed-top">
+    <!-- BEGIN HEADER INNER -->
+    <div class="clearfix">
+        <!-- BEGIN BURGER TRIGGER -->
+        <div class="burger-trigger">
+            <button class="menu-trigger">
+                <img src="{{ base_url('assets/layouts/img/m_toggler.png') }}" alt=""> </button>
+            <div class="menu-overlay menu-overlay-bg-transparent">
+                <div class="menu-overlay-content">
+                    <ul class="menu-overlay-nav text-uppercase">
+                        <li>
+                            <a href="#">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#">Reports</a>
+                        </li>
+                        <li>
+                            <a href="#">Templates</a>
+                        </li>
+                        <li>
+                            <a href="#">Support</a>
+                        </li>
+                        <li>
+                            <a href="#">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu-bg-overlay">
+                <button class="menu-close">&times;</button>
+            </div>
+            <!-- the overlay element -->
+        </div>
+        <!-- END NAV TRIGGER -->
+        <!-- BEGIN LOGO -->
+        <div class="page-logo">
+            <a href="index.html">
+                <img src="{{ base_url('assets/layouts/img/logo.png') }}" alt="logo" class="logo-default" /> </a>
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                <!-- BEGIN NOTIFICATION DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <i class="icon-bell"></i>
+                        <span class="badge badge-success"> 7 </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="external">
+                            <h3>
+                                <span class="bold">12 pending</span> notifications</h3>
+                            <a href="#">view all</a>
+                        </li>
+                        <li>
+                            <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="time">just now</span>
+                                        <span class="details">
+                                                    <span class="label label-sm label-icon label-success">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span> New user registered. </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="time">3 mins</span>
+                                        <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> Server #12 overloaded. </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="time">10 mins</span>
+                                        <span class="details">
+                                                    <span class="label label-sm label-icon label-warning">
+                                                        <i class="fa fa-bell-o"></i>
+                                                    </span> Server #2 not responding. </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="time">14 hrs</span>
+                                        <span class="details">
+                                                    <span class="label label-sm label-icon label-info">
+                                                        <i class="fa fa-bullhorn"></i>
+                                                    </span> Application error. </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="time">2 days</span>
+                                        <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> Database overloaded 68%. </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="time">3 days</span>
+                                        <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> A user IP blocked. </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="time">4 days</span>
+                                        <span class="details">
+                                                    <span class="label label-sm label-icon label-warning">
+                                                        <i class="fa fa-bell-o"></i>
+                                                    </span> Storage Server #4 not responding dfdfdfd. </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="time">5 days</span>
+                                        <span class="details">
+                                                    <span class="label label-sm label-icon label-info">
+                                                        <i class="fa fa-bullhorn"></i>
+                                                    </span> System Error. </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="time">9 days</span>
+                                        <span class="details">
+                                                    <span class="label label-sm label-icon label-danger">
+                                                        <i class="fa fa-bolt"></i>
+                                                    </span> Storage server failed. </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END NOTIFICATION DROPDOWN -->
+                <!-- BEGIN INBOX DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <i class="icon-envelope-open"></i>
+                        <span class="badge badge-danger"> 4 </span>
+                    </a>
+
+                </li>
+                <!-- END INBOX DROPDOWN -->
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-user">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <div class="dropdown-user-inner">
+                            <span class="username username-hide-on-mobile"> Nick </span>
+                            <img alt="" src="{{ base_url('assets/layouts/img/avatar1.jpg') }}" /> </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a href="extra_profile.html">
+                                <i class="icon-user"></i> My Profile </a>
+                        </li>
+                        <li>
+                            <a href="page_calendar.html">
+                                <i class="icon-calendar"></i> My Calendar </a>
+                        </li>
+                        <li>
+                            <a href="inbox.html">
+                                <i class="icon-envelope-open"></i> My Inbox
+                                <span class="badge badge-danger"> 3 </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="page_todo.html">
+                                <i class="icon-rocket"></i> My Tasks
+                                <span class="badge badge-success"> 7 </span>
+                            </a>
+                        </li>
+                        <li class="divider"> </li>
+                        <li>
+                            <a href="extra_lock.html">
+                                <i class="icon-lock"></i> Lock Screen </a>
+                        </li>
+                        <li>
+                            <a href="login.html">
+                                <i class="icon-key"></i> Log Out </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END USER LOGIN DROPDOWN -->
+            </ul>
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+    <!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<!-- BEGIN HEADER & CONTENT DIVIDER -->
+<div class="clearfix"> </div>
+<!-- END HEADER & CONTENT DIVIDER -->
+<!-- BEGIN CONTAINER -->
+<div class="page-container page-content-inner page-container-bg-solid">
+
+    <!-- BEGIN CONTENT -->
+    <div class="container-fluid container-lf-space margin-top-15">
+        <!-- BEGIN PAGE BASE CONTENT -->
+        {% block content %}{% endblock %}
+
+
+        <!-- END PAGE BASE CONTENT -->
+    </div>
+    <!-- END CONTENT -->
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN QUICK SIDEBAR -->
+<a href="javascript:;" class="page-quick-sidebar-toggler">
+    <i class="icon-login"></i>
+</a>
+<div class="page-quick-sidebar-wrapper" data-close-on-body-click="false">
+    <div class="page-quick-sidebar">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> Users
+                    <span class="badge badge-danger">2</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" data-target="#quick_sidebar_tab_2" data-toggle="tab"> Alerts
+                    <span class="badge badge-success">7</span>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> More
+                    <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="dropdown-menu pull-right">
+                    <li>
+                        <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
+                            <i class="icon-bell"></i> Alerts </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
+                            <i class="icon-info"></i> Notifications </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
+                            <i class="icon-speech"></i> Activities </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
+                            <i class="icon-settings"></i> Settings </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<!-- END QUICK SIDEBAR -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+    <div class="page-footer-inner container-fluid container-lf-space">
+        <p class="page-footer-copyright">2015 &copy; Metronic by keenthemes.
+            <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+        </p>
+    </div>
+    <div class="go2top">
+        <i class="icon-arrow-up"></i>
+    </div>
+</div>
+<!-- END FOOTER -->
+
+<!-- BEGIN CORE PLUGINS -->
+<script src="{{ base_url('assets/global/plugins/jquery.min.js') }}" type="text/javascript"></script>
+<script src="{{ base_url('assets/global/plugins/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ base_url('assets/global/plugins/js.cookie.min.js') }}" type="text/javascript"></script>
+<script src="{{ base_url('assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js') }}" type="text/javascript"></script>
+<script src="{{ base_url('assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
+<script src="{{ base_url('assets/global/plugins/jquery.blockui.min.js') }}" type="text/javascript"></script>
+<script src="{{ base_url('assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+
+<!-- BEGIN THEME GLOBAL SCRIPTS -->
+<script src="{{ base_url('assets/global/scripts/app.min.js') }}" type="text/javascript"></script>
+<!-- END THEME GLOBAL SCRIPTS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+<!-- END PAGE LEVEL SCRIPTS -->
+<!-- BEGIN THEME LAYOUT SCRIPTS -->
+<script src="{{ base_url('assets/global/scripts/layout.min.js') }}" type="text/javascript"></script>
+<script src="{{ base_url('assets/global/scripts/quick-sidebar.min.js') }}" type="text/javascript"></script>
+<!-- END THEME LAYOUT SCRIPTS -->
+</body>
+
+</html>
