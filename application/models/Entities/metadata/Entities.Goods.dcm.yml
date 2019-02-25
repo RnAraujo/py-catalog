@@ -1,6 +1,7 @@
 Entities\Goods:
   type: entity
   table: coa_catalog
+  schema: public
   id:
       id:
         type: integer

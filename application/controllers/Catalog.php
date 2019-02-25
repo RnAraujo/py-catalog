@@ -25,7 +25,7 @@ class Catalog extends CI_Controller {
 
         $dql = "SELECT g FROM Entities\Goods g";
         $per_page = 18;
-        $offset = $page * $per_page;
+        $offset = ($page - 1) * $per_page;
         $query = $em->createQuery($dql)
             ->setFirstResult($offset)
             ->setMaxResults($per_page);
