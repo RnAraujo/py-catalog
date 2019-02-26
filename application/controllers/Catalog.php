@@ -51,19 +51,17 @@ class Catalog extends CI_Controller {
         ));
 	}
 
-    public function index2()
+    public function destroy($id)
     {
-        // $this->load->view('welcome_message');
-        $this->load->library('Twig');
         $this->load->library('Doctrine');
 
         $em = $this->doctrine->em;
 
-        $goods = $em->getRepository(Goods::class)->findAll();
+        $good = $em->find('Entities\Goods', $id);
 
-        echo $this->twig->render('rd.hello', array(
-            'name' => 'Rene Araujo23',
-            'goods' => $goods
-        ));
+        $em->remove($good);
+        $em->flush();
+
+        redirect('catalog', 'location');
     }
 }

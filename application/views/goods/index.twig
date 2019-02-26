@@ -31,7 +31,7 @@
                                 <th style="width: 130px">Clasifier</th>
                                 <th style="width: 130px">Pricetag</th>
                                 <th style="width: 130px">Enabled</th>
-                                <th>Options</th>
+                                <th colspan="3">Options</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -48,9 +48,12 @@
                                         {% if item.enabled == true %}
                                             <span class="label label-sm label-success"> Habilitado </span>
                                         {% else %}
-                                            <span class="label label-sm label-danger"> Blocked </span>
+                                            <span class="label label-sm label-danger"> Bloqueado </span>
                                         {% endif %}
                                     </td>
+                                    <td style="width: 50px"><a href="flat-icon"><i class="material-icons text-primary">create</i></a></td>
+                                    <td style="width: 50px"><a href="flat-icon"><i class="material-icons text-info">pageview</i></a></td>
+                                    <td style="width: 50px"><a href="{{ site_url('catalog/destroy/') ~ item.id }}"><i class="material-icons text-danger">delete_sweep</i></a></td>
                                 </tr>
                             {% endfor %}
                             </tbody>
