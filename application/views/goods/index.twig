@@ -1,6 +1,7 @@
 {% extends "templates/app.twig" %}
 
 {% block content %}
+
     <div class="row">
         <div class="col-md-12">
             <!-- BEGIN SAMPLE TABLE PORTLET-->
@@ -24,21 +25,31 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th> # </th>
-                                <th style="width: 200px"> First Name </th>
-                                <th> Last Name </th>
-                                <th> Username </th>
-                                <th> Status </th>
+                                <th style="width: 170px">Code</th>
+                                <th>Description</th>
+                                <th style="width: 170px">Unit</th>
+                                <th style="width: 130px">Clasifier</th>
+                                <th style="width: 130px">Pricetag</th>
+                                <th style="width: 130px">Enabled</th>
+                                <th>Options</th>
                             </tr>
                             </thead>
                             <tbody>
                             {% for item in goods %}
                                 <tr>
-                                    <td>{{ loop.index }}</td>
-                                    <td>{{ item.id }}</td>
-                                    <td>{{ item.description }}</td>
+                                    <td>{{ item.itemCode }}</td>
+                                    <td>{{ item.description }}
+                                        <span class="text-info">[ {{ item.id }} ]</span>
+                                    </td>
+                                    <td>{{ item.unitMeasurement }}</td>
+                                    <td>{{ item.expenseClasifier }}</td>
+                                    <td>{{ item.pricetag }}</td>
                                     <td>
-                                        <span class="label label-sm label-danger"> Blocked </span>
+                                        {% if item.enabled == true %}
+                                            <span class="label label-sm label-success"> Habilitado </span>
+                                        {% else %}
+                                            <span class="label label-sm label-danger"> Blocked </span>
+                                        {% endif %}
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -53,24 +64,13 @@
                                     <i class="fa fa-angle-left"></i>
                                 </a>
                             </li>
-                            <li>
-                                <a href="javascript:;"> 1 </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;"> 2 </a>
-                            </li>
-                            <li class="active">
-                                <a href="javascript:;"> 3 </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;"> 4 </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;"> 5 </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;"> 6 </a>
-                            </li>
+                            {% for i in start_page..last_page %}
+                                {% if i == current_page %}
+                                    <li class="active"><a href="{{ pagination_url ~ (i * 10) }}">{{ i + 1 }}</a></li>
+                                {% else %}
+                                    <li><a href="{{ pagination_url ~ (i * 10) }}">{{ i + 1 }}</a></li>
+                                {% endif %}
+                            {% endfor %}
                             <li>
                                 <a href="javascript:;">
                                     <i class="fa fa-angle-right"></i>

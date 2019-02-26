@@ -15,6 +15,15 @@ Entities\Goods:
       description:
         type: string
         column: description
+      unitMeasurement:
+        type: string
+        column: unit_measurement
+      expenseClasifier:
+        type: string
+        column: expense_clasifier
       pricetag:
-        type: integer
+        type: decimal
         column: pricetag
+      enabled:
+        type: boolean
+        column: enabled

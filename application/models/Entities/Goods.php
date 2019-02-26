@@ -6,7 +6,10 @@ class Goods
     private $id;
     private $itemCode;
     private $description;
+    private $unitMeasurement;
+    private $expenseClasifier;
     private $pricetag;
+    private $enabled;
 
     public function __call($name, $arguments)
     {
